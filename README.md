@@ -6,10 +6,15 @@ A thread synchonized queue made for C's PThreads.
 
 Place the files `fifoQ.c` and `fifoQ.h` in your project directory.
 
-In order to compile the code and run it, first off you have to compile the library with `gcc fifoQ.c -c -o fifoQ.o`, then create the static library with `ar rvs libfifoq.a fifoQ.o` and compile with your code using `gcc main.c -lpthread -o main -L. -lfifoq`.
+In order to compile the code and run it, first off you have to compile the library:
+```gcc fifoQ.c -c -o fifoQ.o```
+Then create the static library: 
+```ar rvs libfifoq.a fifoQ.o```
+And compile with your source code:
+```gcc main.c -lpthread -o main -L. -lfifoq```
 
 Here's what you can do with this library: 
-```
+```c
 	//Create the queue
 	Q = initQueue();
 	
