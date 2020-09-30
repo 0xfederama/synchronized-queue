@@ -4,7 +4,7 @@ A thread synchonized queue made for C's PThreads.
 
 ## Usage 
 
-Place the files **[fifoQ.c](fifoQ.c)** and **[fifoQ.h](fifoQ.h)** in your project directory.
+Place the files [fifoQ.c](fifoQ.c) and [fifoQ.h](fifoQ.h) in your project directory.
 
 In order to compile the code and run it, first off you have to compile the library:
 
