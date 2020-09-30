@@ -8,19 +8,19 @@ Place the files **[fifoQ.c](fifoQ.c)** and **[fifoQ.h](fifoQ.h)** in your projec
 
 In order to compile the code and run it, first off you have to compile the library:
 
-```sh
+```zsh
 gcc fifoQ.c -c -o fifoQ.o
 ```
 
 Then create the static library: 
 
-```sh
+```zsh
 ar rvs libfifoq.a fifoQ.o
 ```
 
 And compile with your source code:
 
-```sh
+```zsh
 gcc main.c -lpthread -o main -L. -lfifoq
 ```
 
