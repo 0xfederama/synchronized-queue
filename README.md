@@ -8,19 +8,19 @@ Place the files **[fifoQ.c](fifoQ.c)** and **[fifoQ.h](fifoQ.h)** in your projec
 
 In order to compile the code and run it, first off you have to compile the library:
 
-```zsh
+```
 gcc fifoQ.c -c -o fifoQ.o
 ```
 
 Then create the static library: 
 
-```zsh
+```
 ar rvs libfifoq.a fifoQ.o
 ```
 
 And compile with your source code:
 
-```zsh
+```
 gcc main.c -lpthread -o main -L. -lfifoq
 ```
 
@@ -29,7 +29,7 @@ gcc main.c -lpthread -o main -L. -lfifoq
 Here's what you can do with this library: 
 ```c
 //Create the queue
-Q = initQueue();
+queue Q = initQueue();
 	
 //Insert an element in the queue
 void *element;
