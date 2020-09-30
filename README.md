@@ -24,7 +24,7 @@ And compile with your source code:
 gcc main.c -lpthread -o main -L. -lfifoq
 ```
 
- \
+ /
 
 Here's what you can do with this library: 
 ```c
