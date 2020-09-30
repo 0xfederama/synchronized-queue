@@ -1,6 +1,6 @@
 # synchronized-queue
 
-A thread synchonized queue made for C's PThreads.
+A thread synchonized FIFO queue made for C's PThreads.
 
 ## Usage 
 
