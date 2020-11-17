@@ -48,4 +48,4 @@ deleteQueue(Q);
 
 ## License
 
-Under the MIT License, you can do whatever you want with this library, even use it in closed source projects. Despite that, a mention would be appreciated :wink:.
+Under the MIT License, you can do whatever you want with this library. Anyway, a mention would be appreciated :wink:.
