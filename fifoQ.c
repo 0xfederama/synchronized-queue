@@ -16,11 +16,15 @@ queue* initQueue () {
 	q->size=0;
 	if (pthread_mutex_init(&q->lock, NULL) != 0) {
 		perror("Error inizializing mutex in queue");
+		free(q);
+		free(q->first);
 		return NULL;
     }
     if (pthread_cond_init(&q->cond, NULL) != 0) {
 		perror("Error initializing varcond in queue");
 		if (&q->lock) pthread_mutex_destroy(&q->lock);
+		free(q);
+		free(q->first);
 		return NULL;
     }
 	return q;
@@ -58,13 +62,13 @@ void* pop (queue*q) {
 	(q->size)--;
 	assert(q->size>=0);
 	pthread_mutex_unlock(&q->lock);
-	free((void*)n);
+	free(n);
 	return data;
 }
 
-int getSize (queue*q) {
+size_t getSize (queue*q) {
 	if (q==NULL) return -1;
-	int size=-1;
+	size_t size=-1;
 	pthread_mutex_lock(&q->lock);
 	size=q->size;
 	pthread_mutex_unlock(&q->lock);
@@ -75,9 +79,9 @@ void deleteQueue (queue*q) {
 	while (q->first != q->last) {
 		node *killer=(node*)q->first;
 		q->first=q->first->next;
-		free((void*)killer);
+		free(killer);
 	}
-	if (q->first) free((void*)((void*)q->first));
+	if (q->first) free(q->first);
 	if (&q->lock) pthread_mutex_destroy(&q->lock);
     if (&q->cond) pthread_cond_destroy(&q->cond);
     free(q);

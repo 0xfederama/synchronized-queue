@@ -11,7 +11,7 @@ typedef struct node {
 
 //Queue struct
 typedef struct queue {
-	unsigned int size;		//Queue dimension
+	size_t size;		//Queue dimension
 	struct node *first; 	//Pointer to the first element of the queue
 	struct node *last;		//Pointer to the last element of the queue
 	pthread_mutex_t lock;	//Mutex semaphore within the queue
@@ -44,7 +44,7 @@ void* pop (queue *q);
  * \returns queue size - if everything ok
  * \returns -1 - if errors occurred
  */
-int getSize (queue *q);
+size_t getSize (queue *q);
 
 // Deletes and frees the queue
 void deleteQueue (queue *q);

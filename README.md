@@ -40,7 +40,7 @@ push(Q, element);
 void *head = pop(Q);
 
 //Get the size of the queue
-int size = getSize(Q);
+size_t size = getSize(Q);
 
 //Delete and free the space of the queue
 deleteQueue(Q);
